@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Zone 01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/LoginPageStyle.css" />
+        <link rel="icon" href="./img/titleLogo.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="page-wrapper">
+            <div id="welcome" class="title welcome">Welcome to reboot<img src="./img/01Logo.png" class="O1-logo"/></div>
+
+            <div class="container">
+                <div class="login form">
+                    <header>Login</header>
+
+                    <form>  
+                        <div class="input-group">
+                            <input id="email" name="email" type="email" placeholder="Email or Username" />
+                        </div>
+                        <div class="input-group">
+                            <input id="password" name="password" type="password" placeholder="Password" />
+                        </div>
+                        <input type="submit" class="button" value="SIGN IN" />
+                    </form>
+                </div>
+            </div>
+            
+            <div id="showUserInfo">
+            </div>
+
+            <button onclick="logOut();" class="signout-button">SIGN OUT</button>
+        </div>
+
+
+
+        <!-- Link All JS codes -->
+        <script src="mainCode.js"></script>
+        <script src="getData.js"></script>
+        <script src="showData.js"></script>
+        <script src="Charts/BarChart.js"></script>
+        <script src="Charts/LineChart.js"></script>
+        <script src="Charts/PiscineChart.js"></script>
+    </body>
+</html>

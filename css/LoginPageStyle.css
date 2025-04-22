@@ -1,0 +1,238 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --primary-color: #4f46e5;
+  --secondary-color: #60a5fa;
+  --accent-color: #818cf8;
+  --success-color: #34d399;
+  --danger-color: #f87171;
+  --light-color: #ffffff;
+  --dark-color: #1e293b;
+  --gray-color: #f3f4f6;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --glass-opacity: 0.9;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  background: #0a1f44;
+  font-family: 'Poppins', sans-serif;
+  color: var(--dark-color);
+  position: relative;
+}
+
+.welcome {
+  font-size: 3.8rem;
+  text-align: center;
+  margin-top: 4rem;
+  color: var(--light-color);
+  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.5px;
+}
+
+.O1-logo {
+  width: 75px;
+  height: 75px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 20px;
+  filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.4));
+  transition: var(--transition);
+  top: 2rem;
+  left: 2rem;
+}
+
+.O1-logo:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(4px 4px 12px rgba(0, 0, 0, 0.5));
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 3rem;
+}
+
+.container {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  background: rgba(255, 255, 255, var(--glass-opacity));
+  border-radius: 25px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.form {
+  padding: 3.5rem 3rem;
+  flex: 1;
+  position: relative;
+}
+
+.form header {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--dark-color);
+  margin-bottom: 2.5rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 2.5rem;
+  z-index: 1;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 1.2rem 1.5rem;
+  border: 2px solid var(--gray-color);
+  border-radius: 15px;
+  font-size: 1.1rem;
+  transition: var(--transition);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--dark-color);
+}
+
+.input-group input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(75, 140, 255, 0.2);
+  outline: none;
+  background: rgba(255, 255, 255, 1);
+}
+
+.button {
+  width: 100%;
+  padding: 1.2rem;
+  border: none;
+  border-radius: 15px;
+  background: var(--primary-color);
+  color: var(--light-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+  z-index: 1;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(75, 140, 255, 0.3);
+}
+
+.button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(75, 140, 255, 0.2);
+}
+
+.signout-button {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--danger-color);
+  color: var(--light-color);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  z-index: 1;
+}
+
+.signout-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(248, 113, 113, 0.3);
+}
+
+#showUserInfo {
+  display: none;
+  margin-top: 2.5rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);  
+  text-align: center;
+}
+
+#showUserInfo details {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+#showUserInfo details summary {
+  padding: 1.2rem;
+  background: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  border-radius: 12px;
+}
+
+#showUserInfo details summary:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(-20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--dark-color);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+span{
+    color: var(--primary-color);
+
+}
+
+
+
+
