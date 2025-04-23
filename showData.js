@@ -18,7 +18,7 @@ function showUserData(data) {
     <h3>From <span>${userDetails.attrs.country}-${userDetails.attrs.addressCity}</span>, Joined on <span>${userDetails.createdAt.split('T')[0]}</span></h3>
     
     <h4>Your Current Audit Ratio is <span>${userDetails.auditRatio.toFixed(1)}</span>
-    and the contact number is <span>${userDetails.attrs.Phone}</span></h4><br>`;
+    and the contact number is <span>${userDetails.attrs.Phone || userDetails.attrs.PhoneNumber}</span></h4><br>`;
 
 
     updateUserPage(userInfo, "UserInfo"); // Send to update the profile page
