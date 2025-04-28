@@ -1,13 +1,22 @@
+function toBase64Unicode(str) {
+    const encoder = new TextEncoder();
+    const bytes = encoder.encode(str);
+    let binary = '';
+    bytes.forEach((b) => binary += String.fromCharCode(b));
+    return btoa(binary);
+}
+
 async function getLoginToken(username, password) { // Fetches the JWT token from Reboot login endpoint
 
     try {
         let newToken = "";
 
+        let base64Credentials = toBase64Unicode(username + ":" + password);
         //Make a POST request to the signin endpoint, and supply your credentials using Basic authentication, with base64 encoding.
         let response = await fetch(`https://learn.reboot01.com/api/auth/signin`, {
             method: "POST",
             headers: {
-                Authorization: `basic ${btoa(username + ":" + password)}`, // Encode a string in base64
+                Authorization: `basic ${base64Credentials}`, // Encode a string in base64
                 Accept: 'application/json',
                 'Content-Type': 'application/json'
             }
